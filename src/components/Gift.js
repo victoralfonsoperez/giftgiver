@@ -7,6 +7,7 @@ class Gift extends Component {
 
     this.state = { person: '', present: '' }
   }
+
   render() {
     return (
       <div>

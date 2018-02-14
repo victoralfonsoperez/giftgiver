@@ -24,5 +24,13 @@
     "eslint-plugin-jsx-a11y": "^6.0.3",
     "eslint-plugin-react": "^7.5.1",
     "jest-cli": "^20.0.4"
+  },
+  "jest": {
+    "collectCoverageFrom": [
+      "src/**/*.js",
+      "!src/index.js",
+      "!src/tempPolyfills.js",
+      "!src/setupTests.js"
+    ]
   }
 }
