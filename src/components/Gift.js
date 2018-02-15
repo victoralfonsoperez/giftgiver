@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+import PropTypes from 'prop-types'
 import { Form, FormGroup, ControlLabel, Button, FormControl } from 'react-bootstrap'
 
 class Gift extends Component {
@@ -15,6 +16,7 @@ class Gift extends Component {
           <FormGroup>
             <ControlLabel>Person</ControlLabel>
             <FormControl
+              defaultValue={this.state.person}
               className="input-person"
               onChange={event => this.setState({ person: event.target.value })}
             />
@@ -22,6 +24,7 @@ class Gift extends Component {
           <FormGroup>
             <ControlLabel>present</ControlLabel>
             <FormControl
+              defaultValue={this.state.present}
               className="input-present"
               onChange={event => this.setState({ present: event.target.value })}
             />
@@ -36,6 +39,19 @@ class Gift extends Component {
       </div>
     )
   }
+}
+
+Gift.propTypes = {
+  removeGift: PropTypes.func.isRequired,
+  gift: PropTypes.shape({ person: '', present: '', id: '' }),
+}
+
+Gift.defaultProps = {
+  gift: {
+    person: '',
+    present: '',
+    id: '',
+  },
 }
 
 export default Gift
